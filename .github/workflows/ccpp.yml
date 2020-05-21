@@ -12,6 +12,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: ls
-      run: ls -al
+      run: ls -al build/
     - name: lua53
-      run: cd build && make_osx_lua53.sh
+      run: cd build && ./make_osx_lua53.sh
