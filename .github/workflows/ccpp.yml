@@ -22,9 +22,9 @@ jobs:
     - name: android-lua53
       run: cd ./build && ./make_android_lua53.sh
     - name: archive files
-      run: ls -al && tar cvf plugin_lua53.tar plugin_lua53/
+      run: ls -al && cd ./build && tar cvf plugin_lua53.tar plugin_lua53/
     - name: Upload Artifact
       uses: actions/upload-artifact@master
       with:
         name: plugin_lua53-osx.tar
-        path: plugin_lua53-osx.tar
+        path: build/plugin_lua53-osx.tar
