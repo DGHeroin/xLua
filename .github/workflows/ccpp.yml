@@ -1,4 +1,4 @@
-name: lua cli
+name: xLua
 
 on:
   push:
@@ -11,5 +11,7 @@ jobs:
     runs-on: macos-latest
     steps:
     - uses: actions/checkout@v2
+    - name: ls
+      run: ls -al
     - name: lua53
       run: cd build && make_osx_lua53.sh
