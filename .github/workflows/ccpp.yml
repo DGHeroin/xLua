@@ -16,11 +16,11 @@ jobs:
     - name: s
       run: cd ~/ && unzip android-ndk-r21-darwin-x86_64.zip
     - name: osx-lua53
-      run: ./build/make_osx_lua53.sh
+      run: cd ./build && ./make_osx_lua53.sh
     - name: ios-lua53
-      run: ./build/make_ios_lua53.sh
+      run: ./make_ios_lua53.sh
     - name: android-lua53
-      run: ./build/make_android_lua53.sh
+      run: ./make_android_lua53.sh
     - name: archive files
       run: tar cvf plugin_lua53.tar plugin_lua53/
     - name: Upload Artifact
