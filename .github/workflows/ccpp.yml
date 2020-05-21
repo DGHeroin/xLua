@@ -1,0 +1,15 @@
+name: lua cli
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build-osx:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: lua53
+      run: cd build && make_osx_lua53.sh
