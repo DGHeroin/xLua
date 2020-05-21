@@ -11,7 +11,20 @@ jobs:
     runs-on: macos-latest
     steps:
     - uses: actions/checkout@v2
-    - name: ls
-      run: ls -al build/
-    - name: lua53
-      run: cd build && ./make_osx_lua53.sh
+    - name: install dep
+      run:  wget https://dl.google.com/android/repository/android-ndk-r21-darwin-x86_64.zip -O ~/android-ndk-r21-darwin-x86_64.zip
+    - name: s
+      run: cd ~/ && unzip android-ndk-r21-darwin-x86_64.zip
+    - name: osx-lua53
+      run: ./build/make_osx_lua53.sh
+    - name: ios-lua53
+      run: ./build/make_ios_lua53.sh
+    - name: android-lua53
+      run: ./build/make_android_lua53.sh
+    - name: archive files
+      run: tar cvf plugin_lua53.tar plugin_lua53/
+    - name: Upload Artifact
+      uses: actions/upload-artifact@master
+      with:
+        name: plugin_lua53-osx.tar
+        path: plugin_lua53-osx.tar
