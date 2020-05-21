@@ -28,3 +28,14 @@ jobs:
       with:
         name: plugin_lua53-osx.tar
         path: build/plugin_lua53-osx.tar
+  build-win:
+    runs-on: windows-latest
+    defaults:
+      run:
+        shell: cmd
+    steps:
+    - uses: actions/checkout@v2
+    - name: win64-lua53
+      run: cd build && make_win64_lua53.bat
+    - name: ls
+      run:  tree build
