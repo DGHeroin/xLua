@@ -18,9 +18,9 @@ jobs:
     - name: osx-lua53
       run: cd ./build && ./make_osx_lua53.sh
     - name: ios-lua53
-      run: ./make_ios_lua53.sh
+      run: cd ./build && ./make_ios_lua53.sh
     - name: android-lua53
-      run: ./make_android_lua53.sh
+      run: cd ./build && ./make_android_lua53.sh
     - name: archive files
       run: tar cvf plugin_lua53.tar plugin_lua53/
     - name: Upload Artifact
