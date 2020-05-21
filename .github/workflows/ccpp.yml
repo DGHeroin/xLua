@@ -37,5 +37,10 @@ jobs:
     - uses: actions/checkout@v2
     - name: win64-lua53
       run: cd build && ./make_win64_lua53.bat
-    - name: ls
-      run:  tree build
+    - name: archive files
+      run: ls -al && cd ./build && tar cvf plugin_lua53-win.tar plugin_lua53/
+    - name: Upload Artifact
+      uses: actions/upload-artifact@master
+      with:
+        name: plugin_lua53-win.tar
+        path: build/plugin_lua53-win.tar
